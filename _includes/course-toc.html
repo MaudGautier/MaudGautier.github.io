@@ -1,0 +1,30 @@
+{% assign topic-chosen = site.topics | where:"topic", page.topic | first %}
+
+<h1>{% if topic-chosen.toc-title %} {{ topic-chosen.toc-title }} {% else %} {{ page.topic }} {% endif %}</h1>
+
+{% assign prev-chapter = "NULL" %}
+
+{% for section in site.sections %}
+		
+	{% if section.chapter != prev-chapter %}
+		</ol>
+	{% endif %}
+
+	{% if section.topic == page.topic %}
+		{% if section.chapter != prev-chapter %}
+		{% assign chapter-chosen = site.chapters | where:"chapter", section.chapter | first %}
+		<h2>{% if chapter-chosen.toc-title %} {{ chapter-chosen.toc-title }} {% else %} {{ section.chapter }} {% endif %}</h2>
+			<ol>
+				<li><a class="post-link" href="{{ section.url | prepend: site.baseurl }}"> {% if section.toc-title %} {{ section.toc-title }} {% else %} {{ section.title }} {% endif %}</a></li>
+		{% endif %}
+
+	{% if section.chapter == prev-chapter %}
+			<li><a class="post-link" href="{{ section.url | prepend: site.baseurl }}"> {% if section.toc-title %} {{ section.toc-title }} {% else %} {{ section.title }} {% endif %}</a></li>
+	{% endif %}
+
+	{% assign prev-chapter = section.chapter %}
+
+	{% endif %}
+{% endfor %}
+
+

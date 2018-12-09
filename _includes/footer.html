@@ -1,0 +1,78 @@
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+				<ul class="list-inline text-center footer-links">
+
+					<li>
+						<a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-square fa-stack-2x"></i>
+								<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+
+					{% if site.sn-links.github %}
+					<li>
+						<a href="https://github.com/{{ site.github_username }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-square fa-stack-2x"></i>
+								<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+
+					{% if site.sn-links.linkedin %}
+					<li>
+						<a href="https://linkedin.com/in/{{ site.linkedin_username }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-square fa-stack-2x"></i>
+								<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+
+					{% if site.sn-links.twitter %}
+					<li>
+						<a href="https://twitter.com/{{ site.twitter_username }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-square fa-stack-2x"></i>
+								<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+
+				</ul>
+
+				<p class="copyright">	Copyright &copy; {{ site.author.name }}	&nbsp;&bull;&nbsp; {{ site.time | date: '%Y' }}</p>
+
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<!-- Taken from beautiful jekyll theme: Add jquery and bootstrap -->
+{% if layout.common-js %}
+	{% for js in layout.common-js %}
+		<!-- If loop so as not to include JQuery twice -->
+		{% if js contains 'jquery' %}
+			<script>
+			if (typeof jQuery == 'undefined') {
+				document.write('<script src="{{ js | prepend: site.baseurl | replace: "//", "/" }}"></scr' + 'ipt>');
+			}
+			</script>
+		{% else %}
+			<script src="{{ js | prepend: site.baseurl | replace: '//', '/' }}"></script>
+		{% endif %}
+	{% endfor %}
+{% endif %}
+
+<!-- Add syntax highlight with prism -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+
+
