@@ -1,43 +1,184 @@
-# Welcome to Jekyll!
-#
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~                     Script general information                      ~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+### General infos:
+# Author: Maud Gautier
+# Date: 2018-11-15
+# Based on the jekyll _config.yml file
+
+
+### Infos from Jekyll:
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
 # yourself editing this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve'. 
+# If you change this file, please restart the server process.
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
 
-# Build settings
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~                            Site Settings                            ~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+### Primary settings
+url: "https://MaudGautier.github.io"
+title: Gnomics.io
+description: Basics to learn genomics and become a bioinformatician
+
+### Secondary settings
+baseurl: ""
+
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~                             Page colours                            ~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+### Chosen colors
+# #DCD0C0 - SILK
+# #C0B283 - PALE GOLD
+# #F4F4F4 - PAPER
+# #373737 - CHARCOAL
+
+### Colours for each element
+navbar-col: "#DCD0C0"
+navbar-text-col: "#373737"
+navbar-children-col: "#DCD0C0"
+navbar-border-col: "EAEAEA"
+
+page-col: "#F4F4F4"
+# link-col: "#C0B283"
+link-col: "#958758"
+hover-col: "#A59768"
+
+text-col: "#373737"
+btn-background-col: "#FFF"
+
+footer-col: "#DCD0C0"
+footer-text-col: "#676767"
+footer-link-col: "#373737"
+footer-border-col: "EAEAEA"
+
+avatar-background-col: "#323232"
+
+
+# Fonts
+fonts-order: "'Avenir', 'PT Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~                            Navigation bar                           ~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+### Items in the navigation bar
+navbar-links:
+  Home: ""
+
+### Image in the navigation bar
+avatar: "/img/gnome_sized_ok_6.png"
+
+### Collections
+collections:
+  materials:
+    output: false
+  topics:
+    output: false
+  chapters:
+    output: false
+  sections:
+    output: true
+
+# collections_dir: course
+# collections:
+#     genomics:
+#         output: true
+#
+# collections_dir: projects
+# collections:
+#     proj1:
+#         output: true
+#
+#
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~                                Footer                               ~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+### Author
+author:
+  name: Maud Gautier
+  # twitter:
+
+### Social networks links
+sn-links:
+    # email: "someone@example.com"
+    github: MaudGautier
+    linkedin: maud-gautier-7309ba16b
+    # twitter: Gnomics
+    # reddit: MaudGautier
+    # stackoverflow: "MaudGautier"
+
+### URL in footer
+url-pretty: "thegenomicsgnome.com"  
+
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~                           Miscellaneous                             ~~~ #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+
+### For posts
+permalink: /:year-:month-:day-:title/
+paginate: 10
+
+### Maximum number of words in the excerpt 
+excerpt_length: 50
+
+### Output options (Jekyll)
+timezone: "France/Paris"
 markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+kramdown:
+  input: GFM
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+### Default YAML values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+    values:
+      show-avatar: true
+  - 
+    scope:
+      path: ""
+      type: "sections"
+    values:
+      layout: "course"
+
+### Use tags index page and make tags on each post clickable
+link-tags: true
+
+### Exclude these files from production site
+exclude:
+  - CHANGELOG.md
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+
+### Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+

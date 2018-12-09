@@ -1,0 +1,65 @@
+---
+layout: base
+---
+
+<div class="row with-toc">
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!--                          TABLE OF CONTENTS                           -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<div class="col-lg-3 col-md-3 toc-wrapper">
+		<div class="toc">
+			{% include course-toc.html %}
+		</div>
+	</div>
+	
+
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!--                           ARTICLE CONTENT                            -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<div class="col-lg-8 col-md-9">
+		
+		{% include header.html type="course" %}
+
+		<article role="main" class="course-content">
+			{{ content }}
+		</article>
+
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ TAGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		{% if page.tags.size > 0 %}
+		<div class="blog-tags">
+			Tags:
+			{% if site.link-tags %}
+				{% for tag in page.tags %}
+					<a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
+				{% endfor %}
+			{% else %}
+				{{ page.tags | join: ", " }}
+			{% endif %}
+		</div>
+		{% endif %}
+
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PAGER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		<ul class="pager">
+			{% if page.previous.url %}
+				{% if page.previous.topic == page.topic %}
+				<li class="previous">
+					<a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Chapter</a>
+				</li>
+				{% endif %}
+			{% endif %}
+
+			{% if page.next.url %}
+				{% if page.next.topic == page.topic %}
+				<li class="next">
+					<a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Chapter &rarr;</a>
+				</li>
+				{% endif %}
+			{% endif %}
+		</ul>
+
+	</div>
+</div>
