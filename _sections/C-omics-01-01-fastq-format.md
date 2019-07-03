@@ -12,7 +12,7 @@ tags: [FASTQ, file format]
 
 With the increase of DNA sequencing, a general consensus has rapidly emerged over a <i>de facto</i> standard to store nucleotide sequences in a human-readable fashion: the **FASTQ format**.
 
-This file format directly derives from the <a href="">FASTA file format</a> and was used early for <a href="/course/NGS/Sanger">Sanger capillary sequencing</a>.
+This file format directly derives from the FASTA file format and was used early for Sanger capillary sequencing.
 
 
 
@@ -63,7 +63,7 @@ Focus on the Illumina sequence ID
 The sequence ID follows a specific pattern which differs according to the sequencing platform used (Illumina, 454, Ion Torrent, PacBio...). The specific patterns of each platform are described <a href="https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/#platform-specific-fastq-files">here</a> by the NCBI.
 
 This section focuses exclusively on the sequence ID format outputed by Illumina (the one that provides most details).
-Illumina has used two different formats according to the version of the <a href="{% post_url 2019-01-27-CASAVA %}">CASAVA software package</a> used. The most recent format is in the following form:
+Illumina has used two different formats according to the version of the CASAVA software package used. The most recent format is in the following form:
 
 ```bash
 @<instrument>:<run>:<flowcell>:<lane>:<tile>:<x-pos>:<y-pos> <read>:<filtered or not>:<control number>:<barcode>
@@ -78,7 +78,7 @@ The second part of the ID (
 ) provides additional information: 
 
 - the member (1 or 2) of the pair. This is useful in the case of paired-end or mate-pair reads (details in <a href="#SEandPE">this section</a>);
-- whether the read is filtered (Y) or not (N) by the Illumina Real Time Analysis (RTA) software (details in <a href="{% post_url 2019-01-27-CASAVA %}#cluster_filtering_with_RTA">this note</a>);
+- whether the read is filtered (Y) or not (N) by the Illumina Real Time Analysis (RTA) software;
 - a control number which equals 0 when none of the control bits are on, or an even number otherwise. Control bits are on when a non-indexed control used by with Illumina devices (PhiX) is found in demultiplexed FASTQ data. Basically, it is a flag for the accuracy of multiplexing.
 - an index tag (or barcode), which is a unique 6-to-20 bp-long sequence added to each sample so that its sequence reads can be retrieved (which is useful in case of multiplexing).
 
@@ -121,7 +121,7 @@ So that the string of scores is the same length as the sequence of the read, the
 Single-end VS paired-end reads
 ------------------------------
 
-DNA fragments are generally rather long (several hundreds of base pairs), while the [Next-Generation Sequencing]({{ site.baseurl }}{% link _sections/C-NGS-02-01-Second-generation-overview.md %}) devices can read shorter sequences (a few hundreds of base pairs). As such, only the edges of the DNA fragments are sequenced (these sequenced parts are called 'reads'). 
+DNA fragments are generally rather long (several hundreds of base pairs), while the Next-Generation Sequencing devices can read shorter sequences (a few hundreds of base pairs). As such, only the edges of the DNA fragments are sequenced (these sequenced parts are called 'reads'). 
 
 
 
