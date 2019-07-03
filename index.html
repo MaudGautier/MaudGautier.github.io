@@ -5,3 +5,31 @@ subtitle: Free courses to learn genomics and become a bioinformatician
 ---
 sample index
 
+
+<div class="intro-page">
+  <p>Hello, this website is dedicated to teaching what one needs to become a bioinformatician.
+  Hereunder, you will find all links to the different courses I created.</p>
+</div>
+
+
+{% for topic in site.topics %}
+<div class="home-topic-pres">
+  <h1> {{ topic.toc-title }} </h1>
+  <p> {{ topic.home-description }} </p>
+  {% assign url-not-found = true %}
+  {% for section in site.sections %}
+    {% if url-not-found %}
+    {% if section.topic == topic.topic %}
+      {% assign first-section = section %}
+      {% assign url-not-found = false %}
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+  <p><a href="{{ first-section.url }}">START TO LEARN</a></p>
+</div>
+{% endfor %}
+
+</div>
+
+
+
