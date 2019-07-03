@@ -78,6 +78,8 @@ fonts-order: "'Avenir', 'PT Serif', 'Helvetica Neue', Helvetica, Arial, sans-ser
 ### Items in the navigation bar
 navbar-links:
   Home: ""
+  Courses:
+      - On -omics: "course/omics/FASTQ-format"
 
 ### Image in the navigation bar
 avatar: "/img/gnome_sized_ok_6.png"
