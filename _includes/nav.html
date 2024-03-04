@@ -1,7 +1,12 @@
 <nav>
-    <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-        <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-    </ul>
+    <div class="nav-container">
+        <div class="site-title">
+            <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+            <li><a href="{{ '/tags/' | relative_url }}">Posts</a></li>
+        </ul>
+    </div>
 </nav>
