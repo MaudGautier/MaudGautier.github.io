@@ -4,3 +4,9 @@
 
 layout: home
 ---
+
+Hi! I am Maud 🌺
+
+In this blog, I write about things I have learnt during my journey as a software engineer. I hope the content will help
+you too!
+
