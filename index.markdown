@@ -5,8 +5,12 @@
 layout: home
 ---
 
-Hi! I am Maud 🌺
+Hi! I'm Maud 🌺 
 
-In this blog, I write about things I have learnt during my journey as a software engineer. I hope the content will help
-you too!
+Welcome to my blog!
+Here, I write about things I have learnt during my journey as a software engineer. 
+I hope this content will help you!
+
+Here are all my blog posts, from newest to oldest:
+
 
