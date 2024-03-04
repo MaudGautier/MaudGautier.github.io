@@ -21,8 +21,7 @@
 title: Software under the hood
 #email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi! I am Maud 🌺 
-  In this blog, I write about things I have learnt during
+  Hi! I am Maud 🌺 In this blog, I write about things I have learnt during
   my journey as a software engineer. I hope the content will help you too!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
