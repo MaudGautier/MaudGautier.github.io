@@ -70,3 +70,11 @@ footer {
 a:hover {
     text-decoration: underline;
 }
+
+.post-meta {
+    width: 120px;
+    margin-right: 10px; /* Keeps a space between the date and the title */
+}
+.post-link {
+    line-height: 1.6;
+}
